@@ -1,0 +1,6 @@
+module Pods_QulixTest {
+  umbrella header "Pods-QulixTest-umbrella.h"
+
+  export *
+  module * { export * }
+}

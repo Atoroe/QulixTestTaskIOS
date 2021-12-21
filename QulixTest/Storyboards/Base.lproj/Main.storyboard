@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ix6-KV-Ece">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="xWY-yM-u10">
+            <objects>
+                <viewController id="Ix6-KV-Ece" customClass="SearchViewController" customModule="QulixTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vjI-rd-ado">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L9I-jX-ybQ">
+                                <rect key="frame" x="20" y="16" width="280" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="google"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Ix6-KV-Ece" id="gmT-9P-lZV"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="49M-SM-Vt5">
+                                <rect key="frame" x="20" y="73" width="280" height="48"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Xgb-7w-c71"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Google search"/>
+                                <connections>
+                                    <action selector="searchButtonTouched" destination="Ix6-KV-Ece" eventType="touchUpInside" id="yLl-oc-Rut"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hIk-1G-gxf">
+                                <rect key="frame" x="20" y="141" width="280" height="407"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="hlw-kF-JOl">
+                                        <rect key="frame" x="0.0" y="44.5" width="280" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hlw-kF-JOl" id="6ah-pn-9xl">
+                                            <rect key="frame" x="0.0" y="0.0" width="280" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Ix6-KV-Ece" id="1Jg-bR-5aU"/>
+                                    <outlet property="delegate" destination="Ix6-KV-Ece" id="ozS-sP-4BE"/>
+                                </connections>
+                            </tableView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="c5o-xe-mUX">
+                                <rect key="frame" x="20" y="137" width="280" height="4"/>
+                            </progressView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KMr-pp-wo9"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="49M-SM-Vt5" firstAttribute="leading" secondItem="KMr-pp-wo9" secondAttribute="leading" constant="20" id="AB6-mm-QVC"/>
+                            <constraint firstItem="hIk-1G-gxf" firstAttribute="leading" secondItem="c5o-xe-mUX" secondAttribute="leading" id="CDM-MW-X2t"/>
+                            <constraint firstItem="KMr-pp-wo9" firstAttribute="trailing" secondItem="hIk-1G-gxf" secondAttribute="trailing" constant="20" id="Kst-jC-E0p"/>
+                            <constraint firstItem="L9I-jX-ybQ" firstAttribute="top" secondItem="KMr-pp-wo9" secondAttribute="top" constant="16" id="RcQ-Y7-vGj"/>
+                            <constraint firstItem="L9I-jX-ybQ" firstAttribute="centerX" secondItem="KMr-pp-wo9" secondAttribute="centerX" id="UHv-vZ-z7z"/>
+                            <constraint firstItem="L9I-jX-ybQ" firstAttribute="leading" secondItem="KMr-pp-wo9" secondAttribute="leading" constant="20" id="V3E-2P-OaY"/>
+                            <constraint firstItem="hIk-1G-gxf" firstAttribute="leading" secondItem="KMr-pp-wo9" secondAttribute="leading" constant="20" id="Wpz-YI-Fvs"/>
+                            <constraint firstItem="KMr-pp-wo9" firstAttribute="trailing" secondItem="49M-SM-Vt5" secondAttribute="trailing" constant="20" id="e5O-qL-LQe"/>
+                            <constraint firstItem="c5o-xe-mUX" firstAttribute="width" secondItem="hIk-1G-gxf" secondAttribute="width" id="fL8-tt-Dj6"/>
+                            <constraint firstItem="KMr-pp-wo9" firstAttribute="bottom" secondItem="hIk-1G-gxf" secondAttribute="bottom" constant="20" id="jol-sr-CxE"/>
+                            <constraint firstItem="hIk-1G-gxf" firstAttribute="top" secondItem="c5o-xe-mUX" secondAttribute="bottom" id="lKC-UX-78R"/>
+                            <constraint firstItem="KMr-pp-wo9" firstAttribute="trailing" secondItem="L9I-jX-ybQ" secondAttribute="trailing" constant="20" id="mpZ-31-lHI"/>
+                            <constraint firstItem="hIk-1G-gxf" firstAttribute="top" secondItem="49M-SM-Vt5" secondAttribute="bottom" constant="20" id="sfg-ph-6rb"/>
+                            <constraint firstItem="49M-SM-Vt5" firstAttribute="top" secondItem="L9I-jX-ybQ" secondAttribute="bottom" constant="20" id="vhC-mC-bNr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="progressView" destination="c5o-xe-mUX" id="Zeo-cv-nnd"/>
+                        <outlet property="searchButton" destination="49M-SM-Vt5" id="dYU-fN-TgC"/>
+                        <outlet property="searchResultsTableView" destination="hIk-1G-gxf" id="w3X-yX-oo3"/>
+                        <outlet property="searchTextField" destination="L9I-jX-ybQ" id="5lU-Ae-xrY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qXT-03-fOR" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="21" y="21"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
