@@ -50,7 +50,7 @@ class SearchViewController: UIViewController {
     private func startGoogleSearch() {
         if let searchRequest = searchTextField.text, searchRequest != "" {
             progressView.isHidden = false
-            NetworkManager.shared.fetchData(by: searchRequest, with: progressView) { (links, responseCode) in
+            NetworkManager.shared.fetchDataAF(by: searchRequest, with: progressView) { (links, responseCode) in
                 if let responseCode = responseCode {
                     self.showAlert(title: "Connection Error", message: "\(responseCode)")
                     self.toggleUI()
